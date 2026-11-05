@@ -1,8 +1,8 @@
 # Agent setup moved to Shipyard
 
-`dot_codex` and `dot_claude` have been removed from this repository. Their shared workflow, native role templates, optional model configuration, launcher, and guarded branch cleanup now live in [Shipyard](https://github.com/itamaker/skills/tree/main/skills/in-progress/shipyard).
+`dot_codex` and `dot_claude` have been removed from this repository. Their shared workflow, native role templates, optional model configuration, launcher, and guarded branch cleanup now live in [Shipyard](https://github.com/itamaker/skills/tree/main/skills/dev/shipyard).
 
-Shipyard is in development under `skills/in-progress`; this migration does not promote it into the released plugin or create a release. Merge the skills change before this retirement so installation can resolve the source. Future publication and installation are owned by the skills repository.
+Shipyard is published in the stable skill catalog and Claude Code plugin. Publication and installation are managed by the skills repository.
 
 ## Migrate
 
@@ -21,7 +21,7 @@ python3 ~/.agents/skills/shipyard/scripts/install_clients.py --client both
 python3 ~/.agents/skills/shipyard/scripts/install_clients.py --client both --apply
 ```
 
-The Linux/macOS installer backs up changed named files and preserves unrelated global settings and instructions. Invoke `$shipyard` in Codex or `/shipyard` in Claude Code. The skill's [client reference](https://github.com/itamaker/skills/blob/main/skills/in-progress/shipyard/references/clients.md) documents optional primary-session launch commands and requirements.
+The Linux/macOS installer backs up changed named files and preserves unrelated global settings and instructions. Invoke `$shipyard` in Codex or `/shipyard` in Claude Code. The skill's [client reference](https://github.com/itamaker/skills/blob/main/skills/dev/shipyard/references/clients.md) documents optional primary-session launch commands and requirements.
 
 Removing the source directories stops chezmoi managing these agent files. This migration does not delete existing files in the user's home; do not purge `~/.codex` or `~/.claude`, which may hold authentication and session data. Existing global instruction files can retain old rules: review their team-workflow sections and replace those sections with the installed skill entry when adopting Shipyard, preserving unrelated instructions.
 
